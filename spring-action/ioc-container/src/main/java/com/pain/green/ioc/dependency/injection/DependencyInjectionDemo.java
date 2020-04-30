@@ -4,6 +4,7 @@ import com.pain.green.ioc.domain.UserRepo;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.env.Environment;
 
 public class DependencyInjectionDemo {
     public static void main(String[] args) {
@@ -15,6 +16,8 @@ public class DependencyInjectionDemo {
         lazyInject(beanFactory);
 
         System.out.println(beanFactory);
+
+        // ApplicationContext 实现 BeanFactory 接口，同时包含一个 BeanFactory 对象
         // Not exists
         // System.out.println(beanFactory.getBean(BeanFactory.class));
     }
@@ -30,10 +33,17 @@ public class DependencyInjectionDemo {
     }
 
     private static void builtInInject(BeanFactory beanFactory) {
+        // 自定义 bean
         UserRepo userRepo = (UserRepo) beanFactory.getBean("autoUserRepo");
+
+        // 依赖注入，内建依赖
         BeanFactory injectBeanFactory = userRepo.getBeanFactory();
         System.out.println("injectBeanFactory: " + injectBeanFactory);
         System.out.println("beanFactory == injectBeanFactory, " + (beanFactory == injectBeanFactory));
+
+        // 内建 bean
+        Environment environment = beanFactory.getBean(Environment.class);
+        System.out.println("environment: " + environment);
     }
 
     private static void lazyInject(BeanFactory beanFactory) {
