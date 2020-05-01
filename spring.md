@@ -38,15 +38,32 @@ Initialization method: Bean 初始化回调方法名称
 Destruction method: Bean 销毁回调方法名称
 
 
-Bean 命名：
+Bean 命名
 BeanNameGenerator
 DefaultBeanNameGenerator
 AnnotationBeanNameGenerator
 
-BeanDefinition 注册：
+
+BeanDefinition 注册
 XML 配置元信息
 Java 注解配置元信息
 Java API 配置元信息
+
+
+## 实例化 Bean
+常规方式：
+通过构造器
+通过静态工厂方法
+通过 Bean 工厂方法
+通过 FactoryBean
+
+特殊方式：
+通过 ServiceLoaderFactoryBean
+通过 AutowireCapableBeanFactory#createBean
+通过 BeanDefinitionRegistry#registerBeanDefinition
+
+
+
 
 
 ```java
@@ -67,5 +84,3 @@ class StringToIntegerPropertyEditor extends PropertyEditorSupport {
     }
 }
 ```
-
-SpringIOC 依赖查找

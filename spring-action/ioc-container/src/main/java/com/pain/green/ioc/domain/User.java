@@ -27,4 +27,11 @@ public class User {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+    public static User createUser() {
+        User user = new User();
+        user.setId(4L);
+        user.setName("贺拔岳");
+        return user;
+    }
 }

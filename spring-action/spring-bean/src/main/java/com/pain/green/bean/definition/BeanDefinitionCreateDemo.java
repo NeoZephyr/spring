@@ -7,7 +7,7 @@ import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 
-public class BeanDefinitionDemo {
+public class BeanDefinitionCreateDemo {
     public static void main(String[] args) {
         createBeanDefinitionByBuilder();
         createBeanDefinitionByNew();
