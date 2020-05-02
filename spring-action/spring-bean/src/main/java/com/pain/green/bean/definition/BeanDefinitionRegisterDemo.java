@@ -1,6 +1,7 @@
 package com.pain.green.bean.definition;
 
 import com.pain.green.ioc.domain.User;
+import org.springframework.beans.factory.config.SingletonBeanRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
@@ -21,6 +22,13 @@ public class BeanDefinitionRegisterDemo {
 
         registerUserBeanDefinition(applicationContext, "another-user");
         registerUserBeanDefinition(applicationContext);
+
+        // 外部单体对象注册
+        SingletonBeanRegistry singletonBeanRegistry = applicationContext.getBeanFactory();
+        User user = new User();
+        user.setId(5L);
+        user.setName("拓跋焘");
+        singletonBeanRegistry.registerSingleton("single-user", user);
 
         applicationContext.refresh();
 
