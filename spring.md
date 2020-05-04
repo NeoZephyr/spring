@@ -63,6 +63,14 @@ Java API 配置元信息
 通过 BeanDefinitionRegistry#registerBeanDefinition
 
 
+## 依赖注入模式
+手动模式
+1. xml 资源配置元信息
+2. java 注解配置元信息
+3. api 配置元信息
+
+自动模式
+1. Autowiring
 
 
 
