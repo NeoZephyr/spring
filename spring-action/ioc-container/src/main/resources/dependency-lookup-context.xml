@@ -11,6 +11,15 @@
     <bean id="user" class="com.pain.green.ioc.domain.User">
         <property name="id" value="1"/>
         <property name="name" value="尔朱荣"/>
+        <property name="city" value="ShanXi" />
+        <property name="schoolCities">
+            <list>
+                <value>ShanXi</value>
+                <value>WuHan</value>
+            </list>
+        </property>
+        <property name="workCities" value="ShangHai,BeiJing" />
+        <property name="configLocation" value="classpath:/META-INF/user-config.xml" />
     </bean>
 
     <bean id="superUser" class="com.pain.green.ioc.domain.SuperUser" parent="user" primary="true">
