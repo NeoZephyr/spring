@@ -4,5 +4,6 @@ public enum City {
     BeiJing,
     ShangHai,
     WuHan,
-    ShanXi
+    ShanXi,
+    ShangXi
 }
