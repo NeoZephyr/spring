@@ -14,7 +14,8 @@
 
     <alias name="user" alias="anotherUser" />
 
-    <bean id="userHolder" class="com.pain.green.ioc.domain.UserHolder" autowire="constructor" init-method="customInit">
+    <bean id="userHolder" class="com.pain.green.ioc.domain.UserHolder" autowire="constructor"
+          init-method="customInit" destroy-method="customDestroy">
         <property name="desc" value="user default description" />
     </bean>
 </beans>

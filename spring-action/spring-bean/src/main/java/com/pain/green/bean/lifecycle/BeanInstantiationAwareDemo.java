@@ -29,6 +29,10 @@ public class BeanInstantiationAwareDemo {
         EncodedResource encodedResource = new EncodedResource(resource, "UTF-8");
         beanDefinitionReader.loadBeanDefinitions(encodedResource);
 
+        // SmartInitializingSingleton 通常在 Spring ApplicationContext 场景使用
+        // preInstantiateSingletons 将已注册的 BeanDefinition 初始化成 Spring Bean
+        beanFactory.preInstantiateSingletons();
+
         User user = beanFactory.getBean("user", User.class);
         System.out.println("user: " + user);
 
@@ -37,8 +41,13 @@ public class BeanInstantiationAwareDemo {
 
         UserHolder userHolder = beanFactory.getBean("userHolder", UserHolder.class);
         System.out.println("userHolder: " + userHolder);
+
+        beanFactory.destroyBean("userHolder", userHolder);
+
+        System.out.println("userHolder: " + userHolder);
     }
 
+    // ApplicationContextAwareProcessor 只有 ApplicationContext 才能使用
     private static void applicationContextDemo() {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext();
         String location = "bean-definitions-context.xml";
