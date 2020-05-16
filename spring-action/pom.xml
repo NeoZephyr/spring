@@ -12,6 +12,7 @@
     <modules>
         <module>ioc-container</module>
         <module>spring-bean</module>
+        <module>configuration</module>
     </modules>
 
     <properties>
