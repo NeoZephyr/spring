@@ -13,6 +13,8 @@ public class User {
     private List<City> schoolCities;
     private Resource configLocation;
 
+    private Company company;
+
     public User() {
     }
 
@@ -69,6 +71,14 @@ public class User {
         this.name = name;
     }
 
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -78,6 +88,7 @@ public class User {
                 ", workCities=" + Arrays.toString(workCities) +
                 ", schoolCities=" + schoolCities +
                 ", configLocation=" + configLocation +
+                ", company=" + company +
                 '}';
     }
 
