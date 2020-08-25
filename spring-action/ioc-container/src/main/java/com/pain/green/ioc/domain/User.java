@@ -4,6 +4,7 @@ import org.springframework.core.io.Resource;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 
 public class User {
     private Long id;
@@ -14,6 +15,10 @@ public class User {
     private Resource configLocation;
 
     private Company company;
+
+    private Properties context;
+
+    private String contextText;
 
     public User() {
     }
@@ -79,6 +84,22 @@ public class User {
         this.company = company;
     }
 
+    public Properties getContext() {
+        return context;
+    }
+
+    public void setContext(Properties context) {
+        this.context = context;
+    }
+
+    public String getContextText() {
+        return contextText;
+    }
+
+    public void setContextText(String contextText) {
+        this.contextText = contextText;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -89,6 +110,8 @@ public class User {
                 ", schoolCities=" + schoolCities +
                 ", configLocation=" + configLocation +
                 ", company=" + company +
+                ", context=" + context +
+                ", contextText='" + contextText + '\'' +
                 '}';
     }
 
