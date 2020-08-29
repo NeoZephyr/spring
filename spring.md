@@ -69,26 +69,5 @@ Java API 配置元信息
 2. java 注解配置元信息
 3. api 配置元信息
 
+
 自动模式
-1. Autowiring
-
-
-
-```java
-BeanInfo beanInfo = Introspector.getBeanInfo(Person.class, Object.class);
-Stream.of(beanInfo.getPropertyDescriptors()).forEach(propertyDescriptor -> {
-    Class<?> propertyType = propertyDescriptor.getPropertyType();
-    String propertyName = propertyDescriptor.getName();
-
-    if ("age".equals(propertyName)) {
-        propertyDescriptor.setPropertyEditorClass(StringToIntegerPropertyEditor.class);
-    }
-});
-
-class StringToIntegerPropertyEditor extends PropertyEditorSupport {
-    public void setAsText(String text) {
-        Integer value = Integer.valueOf(text);
-        setValue(value);
-    }
-}
-```
