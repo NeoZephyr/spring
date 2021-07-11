@@ -22,7 +22,7 @@
 
     <properties>
         <file.encoding>UTF-8</file.encoding>
-        <spring.version>5.2.2.RELEASE</spring.version>
+        <spring.version>5.2.4.RELEASE</spring.version>
     </properties>
 
     <dependencyManagement>
