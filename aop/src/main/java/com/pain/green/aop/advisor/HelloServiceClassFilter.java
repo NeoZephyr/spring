@@ -1,7 +1,6 @@
 package com.pain.green.aop.advisor;
 
-import com.pain.green.aop.service.HelloService;
-import com.pain.green.aop.service.HelloServiceImpl;
+import com.pain.green.service.HelloServiceImpl;
 import org.springframework.aop.ClassFilter;
 
 public class HelloServiceClassFilter implements ClassFilter {

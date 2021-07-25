@@ -11,13 +11,13 @@
         http://www.springframework.org/schema/users
         http://www.springframework.org/schema/users.xsd">
 
-    <bean id="helloService" class="com.pain.green.aop.service.HelloServiceImpl" />
+    <bean id="helloService" class="com.pain.green.service.HelloServiceImpl" />
     <bean id="aroundAdvice" class="com.pain.green.aop.advice.AroundAdvice" />
     <bean id="beforeAdvice" class="com.pain.green.aop.advice.BeforeAdvice" />
 
     <bean id="helloServiceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="helloService" />
-        <property name="proxyInterfaces" value="com.pain.green.aop.service.HelloService" />
+        <property name="proxyInterfaces" value="com.pain.green.service.HelloService" />
         <property name="interceptorNames">
             <array>
                 <value>aroundAdvice</value>

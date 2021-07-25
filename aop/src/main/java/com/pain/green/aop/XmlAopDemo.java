@@ -1,7 +1,7 @@
 package com.pain.green.aop;
 
-import com.pain.green.aop.service.HelloService;
-import com.pain.green.aop.service.HelloServiceImpl;
+import com.pain.green.service.HelloService;
+import com.pain.green.service.HelloServiceImpl;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;

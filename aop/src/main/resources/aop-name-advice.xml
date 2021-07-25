@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/users
         http://www.springframework.org/schema/users.xsd">
 
-    <bean id="helloService" class="com.pain.green.aop.service.HelloServiceImpl" />
+    <bean id="helloService" class="com.pain.green.service.HelloServiceImpl" />
     <bean id="beforeAdvice" class="com.pain.green.aop.advice.BeforeAdvice" />
 
     <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
